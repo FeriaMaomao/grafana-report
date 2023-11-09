@@ -1,0 +1,42 @@
+version: '3.2'
+
+services:
+
+  grafana:
+    image: grafana/grafana-enterprise:latest
+    container_name: grafana-dashboard
+    environment:
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_AUTH_DISABLE_LOGIN_FORM: "true"
+      GF_AUTH_DISABLE_SIGNOUT_MENU: "true"
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: "Admin"
+      GF_INSTALL_PLUGINS: marcusolsson-csv-datasource, grafana-image-renderer
+      GF_RENDERING_SERVER_URL: http://renderer:8081/render
+      GF_RENDERING_CALLBACK_URL: http://grafana:3000/
+      GF_LOG_FILTERS: rendering:debug
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./config/defaults.ini:/usr/share/grafana/conf/defaults.ini
+      - ./config/grafana.db:/var/lib/grafana/grafana.db
+      - ./csv:/var/lib/grafana/csv
+
+  reporter:
+    image: izakmarais/grafana-reporter:${gr_version:-latest}
+    container_name: grafana-reporter
+    command: "-ip grafana:3000"
+    ports:
+      - "8686:8686"
+    volumes:
+      - ./templates:/templates
+      - ./reports:/reports
+      - ./config/sources.list:/etc/apt/sources.list
+
+  renderer:
+    image: grafana/grafana-image-renderer:latest
+    container_name: grafana-renderer
+    ports:
+      - "8081:8081"

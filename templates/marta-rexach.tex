@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage[left=2cm, right=2cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+% Setting for 1.5 line spacing
+\renewcommand{\baselinestretch}{1.5}
+
+% Images and figures
+\usepackage{graphicx}
+\usepackage{float}
+
+\def \title{Jenkins Report}
+\def \subtitle {Most used pipelines in Jenkins}
+\def \authors{
+    Digital Banking Engineering - DevSecops\\
+    it-devops@bppr.onmicrosoft.com\\
+
+}
+
+\def \Description{
+    This document contains the reports of the most used pipelines \\
+    with relevant information about them.\\
+}
+
+\def \date{today's date}
+
+\graphicspath{ {images/} }
+
+% Start document
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{0.7cm}
+        
+        \includegraphics[width=0.8\linewidth]{/templates/Jenkins_Logo}\\
+        
+        \vspace{1cm}
+        
+        \Huge
+        \textbf{\title}
+            
+        \vspace{0.5cm}
+        \LARGE
+        \subtitle
+            
+        \vspace{1cm}
+        
+        \large    
+        \authors
+
+        \vspace{2cm}
+        
+        \Description
+
+        \vspace{2cm}
+
+        \date
+        
+    \end{center}
+\end{titlepage}
+
+\section{Pipelines mas usados en ambiente Test}
+
+\vspace{0.5cm}
+
+En esta sección, se presenta un resumen de los pipelines más utilizados en el Ambiente de Test. Los siguientes gráficos representan la frecuencia de ejecución de los pipelines más relevantes en este entorno por mes.
+Es importante destacar que si un gráfico muestra la leyenda "No Data", esto indica que dentro del Ambiente no existen registros de ejecuciones relacionadas con el equipo o proyecto específico.
+A continuación, se detallan los pipelines mas usados en este ambiente, cada uno lleva el nombre del pipeline y el numero de ejecuciones durante el mes.
+
+\vspace{0.8cm}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=1\linewidth]{image1}\\
+\end{figure}
+
+\newpage
+
+\section{Pipelines mas usados en ambiente Dev}
+
+\vspace{0.5cm}
+
+En esta sección, se presenta un resumen de los pipelines más utilizados en el Ambiente de Development. Los siguientes gráficos representan la frecuencia de ejecución de los pipelines más relevantes en este entorno por mes.
+Es importante destacar que si un gráfico muestra la leyenda "No Data", esto indica que dentro del Ambiente no existen registros de ejecuciones relacionadas con el equipo o proyecto específico.
+A continuación, se detallan los pipelines mas usados en este ambiente, cada uno lleva el nombre del pipeline y el numero de ejecuciones durante el mes.
+
+\vspace{0.8cm}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=1\linewidth]{image2}\\
+\end{figure}
+
+\newpage
+
+\section{Pipelines mas usados en ambiente Prod}
+
+\vspace{0.5cm}
+
+En esta sección, se presenta un resumen de los pipelines más utilizados en el Ambiente de Production. Los siguientes gráficos representan la frecuencia de ejecución de los pipelines más relevantes en este entorno por mes.
+Es importante destacar que si un gráfico muestra la leyenda "No Data", esto indica que dentro del Ambiente no existen registros de ejecuciones relacionadas con el equipo o proyecto específico.
+A continuación, se detallan los pipelines mas usados en este ambiente, cada uno lleva el nombre del pipeline y el numero de ejecuciones durante el mes.
+
+\vspace{0.8cm}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=1\linewidth]{image3}\\
+\end{figure}
+
+\vspace{0.5cm}
+
+\end{document}
